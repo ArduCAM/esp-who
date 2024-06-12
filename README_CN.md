@@ -47,6 +47,8 @@ ESP-WHO 的所有示例都存放在 [examples](./examples) 中。该文件夹架
 
 ```bash
 ├── examples
+|   ├──Arducam_mega_ccm
+|   |   ├── Arducam_mega_ccm_web    //Arducam mega ccm 网页显示例程
 │   ├── cat_face_detection          // 猫脸检测示例
 │   │   ├── lcd                     // 结果显示方式为 LCD 屏
 │   │   └── terminal                // 结果显示方式为终端

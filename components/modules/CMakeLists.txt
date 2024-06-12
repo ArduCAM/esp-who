@@ -1,4 +1,5 @@
 set(embed_files "web/www/index_ov2640.html.gz"
+                "web/www/index_mega_ccm.html.gz"
                 "web/www/index_ov3660.html.gz"
                 "web/www/index_ov5640.html.gz"
                 "web/www/monitor.html.gz")

@@ -191,6 +191,7 @@ void app_mdns_main()
         case OV3660_PID: model = "OV3660"; break;
         case OV5640_PID: model = "OV5640"; break;
         case OV7725_PID: model = "OV7725"; break;
+        case MEGA_CCM_PID: model = "MEEG_CCM"; break;
         default: model = "UNKNOWN"; break;
     }
     

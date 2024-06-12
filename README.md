@@ -48,6 +48,8 @@ All examples of ESP-WHO are stored in [examples](./examples) folder. Structure o
 
 ```bash
 ├── examples
+|   ├──Arducam_mega_ccm
+|   |   ├── Arducam_mega_ccm_web    //Arducam mega ccm web examples
 │   ├── cat_face_detection          // Cat Face Detection examples
 │   │   ├── lcd                     // Output displayed on LCD screen
 │   │   ├── web                     // Output displayed on web

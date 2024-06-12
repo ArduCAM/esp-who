@@ -626,6 +626,11 @@ static esp_err_t index_handler(httpd_req_t *req)
     extern const unsigned char index_ov2640_html_gz_end[] asm("_binary_index_ov2640_html_gz_end");
     size_t index_ov2640_html_gz_len = index_ov2640_html_gz_end - index_ov2640_html_gz_start;
 
+
+    extern const unsigned char index_mega_ccm_html_gz_start[] asm("_binary_index_mega_ccm_html_gz_start");
+    extern const unsigned char index_mega_ccm_html_gz_end[] asm("_binary_index_mega_ccm_html_gz_end");
+    size_t index_mega_ccm_html_gz_len = index_mega_ccm_html_gz_end - index_ov2640_html_gz_start;
+
     extern const unsigned char index_ov3660_html_gz_start[] asm("_binary_index_ov3660_html_gz_start");
     extern const unsigned char index_ov3660_html_gz_end[] asm("_binary_index_ov3660_html_gz_end");
     size_t index_ov3660_html_gz_len = index_ov3660_html_gz_end - index_ov3660_html_gz_start;
@@ -646,6 +651,10 @@ static esp_err_t index_handler(httpd_req_t *req)
         else if (s->id.PID == OV5640_PID)
         {
             return httpd_resp_send(req, (const char *)index_ov5640_html_gz_start, index_ov5640_html_gz_len);
+        }
+        else if (s->id.PID == MEGA_CCM_PID)
+        {
+            return httpd_resp_send(req, (const char *)index_mega_ccm_html_gz_start, index_mega_ccm_html_gz_len);
         }
         else
         {
