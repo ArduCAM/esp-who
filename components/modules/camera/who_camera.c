@@ -72,23 +72,6 @@ void register_camera(const pixformat_t pixel_fromat,
         ESP_LOGE(TAG, "Camera init failed with error 0x%x", err);
         return;
     }
-
-    sensor_t *s = esp_camera_sensor_get();
-    if (s->id.PID == OV3660_PID || s->id.PID == OV2640_PID) {
-        s->set_vflip(s, 1); //flip it back    
-    } else if (s->id.PID == GC0308_PID) {
-        s->set_hmirror(s, 0);
-    } else if (s->id.PID == GC032A_PID) {
-        s->set_vflip(s, 1);
-    }
-
-    //initial sensors are flipped vertically and colors are a bit saturated
-    if (s->id.PID == OV3660_PID)
-    {
-        s->set_brightness(s, 1);  //up the blightness just a bit
-        s->set_saturation(s, -2); //lower the saturation
-    }
-
     xQueueFrameO = frame_o;
     xTaskCreatePinnedToCore(task_process_handler, TAG, 3 * 1024, NULL, 5, NULL, 1);
 }
